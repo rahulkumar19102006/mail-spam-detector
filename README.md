@@ -50,11 +50,11 @@ Follow these steps to run the project locally on your machine:
 ### 1. Prerequisites
 Ensure you have Python installed on your system.
 
-### 2. Clone or Extract the Project
-Open your terminal or command prompt inside the project root directory.
+### 2. Project Directory Navigation
+Open your terminal or command prompt inside the project root directory (`Mail Spam Detector`).
 
 ### 3. Activate the Virtual Environment
-Activate the pre-configured `myenv` environment:
+Activate the pre-configured `myenv` environment based on your operating system:
 * **Windows (Command Prompt):**
   ```bash
   myenv\Scripts\activate
@@ -82,17 +82,17 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
-Once the server starts, open your browser and navigate to: **`http://127.0.0`**
+Once the server starts running successfully, open your web browser and navigate to: **`http://127.0.0`**
 
----
 
 ## 🧠 How It Works (System Architecture)
-1. **User Input:** The user types a message into the frontend text area and clicks **"Check"**.
-2. **HTTP POST Request:** The form data is routed securely to the backend via Django URLs.
-3. **Inference (views.py):** The text is cleaned and vectorized. The pre-trained Machine Learning model processes the vector to calculate probabilities.
-4. **Response Delivery:** The model outputs a prediction label (`spam` or `ham`), which Django passes back to the HTML template to dynamically render the results page.
 
----
+1. **User Input:** The user types a message into the frontend text area and clicks **"Check Message"**.
+2. **HTTP POST Request:** The form data is sent to the backend securely via Django URL routing.
+3. **Model Processing & Inference (`views.py`):** The input text is tokenized and vectorized via `CountVectorizer`. The backend utilizes a `MultinomialNB` (Naive Bayes) classifier to process the vectors and calculate text classification probabilities.
+4. **Database Logging:** The application saves the analyzed text, classification result, and a timestamp into the SQLite database.
+5. **Dynamic Response Delivery:** Django dynamically renders the output on the UI dashboard—updating the logs table immediately and color-coding the results box (e.g., displaying a red alert block for spam).
+
 
 ## 📊 Future Enhancements
 
