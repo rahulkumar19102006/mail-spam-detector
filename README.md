@@ -1,13 +1,15 @@
-# 🛡️ AI-Powered Mail Spam Detector
+# 🛡️ AI-Powered Mail Spam Detector & Analytics Dashboard
 
-A full-stack web application that uses **Machine Learning (NLP)** and the **Django** web framework to classify text messages as either **Spam** (unwanted/malicious) or **Ham** (legitimate/safe) in real-time.
+A production-ready, full-stack web application that leverages **Machine Learning (NLP)** and the **Django** framework to classify text messages as either **Spam** or **Ham** in real-time. Features an interactive administration dashboard with automated verification logs, feedback mechanisms, and on-demand model retraining capabilities.
 
 ---
 
+
 ## 🚀 Features
 * **Real-Time Classification:** Instantly predicts message types using a trained NLP pipeline.
-* **Minimalist UI:** Clean, responsive, user-friendly interface built with HTML/CSS.
-* **Robust Backend:** Secure, fast request-handling powered by Django.
+* **Dynamic UI Dashboard:** Clean, user-friendly interface that dynamically updates visual themes (e.g., color-coded labels for SPAM alerts).
+* **Verification Logs:** Keeps a structured history log of checked text samples along with execution timestamps.
+* **Model Management Controls:** Allows direct manual interventions to retrain the AI model or clear logs straight from the web view.
 * **Isolated Environment:** Built within a dedicated Python virtual environment for reliable deployment.
 
 ---
@@ -93,6 +95,6 @@ Once the server starts, open your browser and navigate to: **`http://127.0.0`**
 ---
 
 ## 📊 Future Enhancements
-* Implement a **dynamic UI theme** (e.g., turning the result box red when spam is detected).
-* Add a **dashboard feature** to keep a history log of checked messages using the SQLite database.
+
+* Implement user authentication to provide individual user dashboards.
 * Deploy the application live using platforms like Render, Heroku, or AWS.
